@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'models/category.dart';
 
-const Categories_data = const [
+// ignore: constant_identifier_names
+const Categories_data = [
   Category(
     id: 'c1',
     title: 'جبال',

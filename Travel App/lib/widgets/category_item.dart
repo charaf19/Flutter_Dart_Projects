@@ -4,7 +4,7 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final String imageUrl;
 
-  CategoryItem(this.imageUrl, this.title);
+  const CategoryItem(this.imageUrl, this.title);
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -18,18 +18,15 @@ class CategoryItem extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           alignment: Alignment.center,
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.white,
-            ),
-          ),
           decoration: BoxDecoration(
             color: Colors.black.withOpacity(0.4),
             borderRadius: BorderRadius.circular(15),
+          ),
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.headline6,
           ),
         )
       ],

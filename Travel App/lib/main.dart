@@ -13,9 +13,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Travel App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: CategoriesScreen(),
+          fontFamily: 'ElMessiri',
+          textTheme: ThemeData.light().textTheme.copyWith(
+                headline5: const TextStyle(
+                  color: Colors.blue,
+                  fontSize: 24,
+                  fontFamily: "ElMessiri",
+                  fontWeight: FontWeight.bold,
+                ),
+                headline6: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontFamily: "ElMessiri",
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+              .copyWith(secondary: Colors.amber)),
+      home: const CategoriesScreen(),
     );
   }
 }
