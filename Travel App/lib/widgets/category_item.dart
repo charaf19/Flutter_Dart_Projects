@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 import '../screens/category_trips_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
 
   void selectCategory(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
-      builder: (c) => TripsScreens(),
+      builder: (c) => TripsScreens(id, title),
     ));
   }
 
-  const CategoryItem(this.imageUrl, this.title);
+  const CategoryItem(this.imageUrl, this.title, this.id);
   @override
   Widget build(BuildContext context) {
     return InkWell(
