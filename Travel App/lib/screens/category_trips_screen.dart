@@ -1,3 +1,4 @@
+import 'package:travel_app/app_data.dart';
 import 'package:flutter/material.dart';
 
 class TripsScreens extends StatelessWidget {
@@ -9,11 +10,19 @@ class TripsScreens extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final categoryId = routeArgument['id'];
     final categoryTitle = routeArgument['title'];
+    final filtredTrips = Trips_data.where((trip) {
+      return trip.categories.contains(categoryId);
+    }).toList();
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text(categoryTitle!)),
       ),
-      body: Center(child: const Text("قائمة برحلات هذا التصنيف")),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          return Text(filtredTrips[index].title);
+        },
+        itemCount: filtredTrips.length,
+      ),
     );
   }
 }
