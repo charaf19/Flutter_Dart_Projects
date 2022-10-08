@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TripsScreens extends StatelessWidget {
+  static const screenRoute = '/category-trips';
+
   @override
   Widget build(BuildContext context) {
     final routeArgument =

@@ -40,9 +40,10 @@ class MyApp extends StatelessWidget {
       supportedLocales: [
         const Locale('ar', 'AE'), // English, no country code
       ],
+      initialRoute: '/',
       routes: {
         '/': (context) => CategoriesScreen(),
-        '/category-trips': (context) => TripsScreens(),
+        TripsScreens.screenRoute: (context) => TripsScreens(),
       },
     );
   }
